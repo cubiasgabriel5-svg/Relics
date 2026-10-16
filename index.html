@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -7,36 +6,31 @@
     <meta name="description" content="Golden Relics - Cartas, figuras, accesorios, torneos y mucho más para coleccionistas.">
     <title>Golden Relics</title>
 
-
-<link rel="stylesheet" href="estilos.css">
-
-
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="cuenta.css">
 </head>
 
 <body>
 
 <!-- ENCABEZADO -->
-
 <header>
     <div class="logo">
         <img src="img/logo_st.png" alt="Golden Relics">
     </div>
 
-<nav>
-    <a href="#inicio">INICIO</a>
-    <a href="#nosotros">NOSOTROS</a>
-    <a href="#productos">PRODUCTOS</a>
-    <a href="#servicios">SERVICIOS</a>
-    <a href="#torneos">TORNEOS</a>
-    <a href="#contacto">CONTACTO</a>
-</nav>
-
+    <nav>
+        <a href="#inicio">INICIO</a>
+        <a href="#nosotros">NOSOTROS</a>
+        <a href="#productos">PRODUCTOS</a>
+        <a href="#servicios">SERVICIOS</a>
+        <a href="#torneos">TORNEOS</a>
+        <a href="#contacto">CONTACTO</a>
+    </nav>
 </header>
-
-<!-- INICIO -->
 
 <main>
 
+<!-- INICIO -->
 <section id="inicio" class="hero">
     <div class="hero-contenido">
         <h1>GOLDEN RELICS</h1>
@@ -120,28 +114,42 @@
 </section>
 
 
-<!-- DESCARGA DE LA APP -->
-<section id="app" class="app">
-    <div class="app-contenido">
+<!-- CUENTA: REGISTRO / INICIO DE SESIÓN -->
+<section id="app" class="app cuenta">
+    <div class="cuenta-caja">
 
-        <div class="app-texto">
-            <span>GOLDEN RELICS</span>
+        <span>GOLDEN RELICS</span>
+        <h2>ACCEDE A TU CUENTA</h2>
 
-            <h2>DESCARGA NUESTRA APP</h2>
+        <!-- Vista: visitante -->
+        <div id="vista-visitante">
+            <div class="cuenta-tabs">
+                <button type="button" id="tab-login" class="activo">INICIAR SESIÓN</button>
+                <button type="button" id="tab-registro">REGISTRARME</button>
+            </div>
 
-            <p>
-                Lleva Golden Relics contigo. Consulta nuestros
-                productos, descubre novedades y disfruta de
-                nuestra plataforma desde tu dispositivo.
-            </p>
+            <form id="form-login" class="cuenta-form">
+                <input type="email" name="correo" placeholder="Correo electrónico" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <button type="submit" class="boton">ENTRAR</button>
+            </form>
 
-            <a href="app/Golden_Relics_Setup.exe"
-               class="boton"
-               download>
-                ⬇ DESCARGAR APP
-            </a>
+            <form id="form-registro" class="cuenta-form" hidden>
+                <input type="text" name="nombre" placeholder="Nombre completo" required maxlength="100">
+                <input type="email" name="correo" placeholder="Correo electrónico" required>
+                <input type="password" name="password" placeholder="Contraseña (mín. 6 caracteres)" required minlength="6">
+                <button type="submit" class="boton">CREAR CUENTA</button>
+            </form>
         </div>
 
+        <!-- Vista: usuario con sesión iniciada -->
+        <div id="vista-usuario" hidden>
+            <p>Hola, <strong id="nombre-usuario"></strong></p>
+            <button type="button" id="btn-menu" class="boton">ABRIR MENÚ</button>
+            <button type="button" id="btn-salir" class="boton-secundario">CERRAR SESIÓN</button>
+        </div>
+
+        <p id="cuenta-mensaje" class="cuenta-mensaje" role="status"></p>
     </div>
 </section>
 
@@ -203,13 +211,8 @@
                 </p>
 
                 <div class="producto-botones">
-                    <a href="#contacto" class="boton">
-                        COMPRAR
-                    </a>
-
-                    <a href="#contacto" class="boton-secundario">
-                        CONTACTAR
-                    </a>
+                    <a href="#contacto" class="boton">COMPRAR</a>
+                    <a href="#contacto" class="boton-secundario">CONTACTAR</a>
                 </div>
             </div>
 
@@ -233,13 +236,8 @@
                 </p>
 
                 <div class="producto-botones">
-                    <a href="#contacto" class="boton">
-                        COMPRAR
-                    </a>
-
-                    <a href="#contacto" class="boton-secundario">
-                        CONTACTAR
-                    </a>
+                    <a href="#contacto" class="boton">COMPRAR</a>
+                    <a href="#contacto" class="boton-secundario">CONTACTAR</a>
                 </div>
             </div>
 
@@ -248,8 +246,7 @@
 
         <article class="producto-card">
 
-            <img src="img/accesorios.png"
-                 alt="Accesorios para coleccionistas">
+            <img src="img/accesorios.png" alt="Accesorios para coleccionistas">
 
             <div>
                 <h3>ACCESORIOS</h3>
@@ -264,13 +261,8 @@
                 </p>
 
                 <div class="producto-botones">
-                    <a href="#contacto" class="boton">
-                        COMPRAR
-                    </a>
-
-                    <a href="#contacto" class="boton-secundario">
-                        CONTACTAR
-                    </a>
+                    <a href="#contacto" class="boton">COMPRAR</a>
+                    <a href="#contacto" class="boton-secundario">CONTACTAR</a>
                 </div>
             </div>
 
@@ -293,65 +285,45 @@
 
         <article class="servicio">
             <div class="servicio-icono"></div>
-
             <h3>VENTA DE PRODUCTOS</h3>
-
             <p>
                 Encuentra productos para ampliar y
                 complementar tu colección.
             </p>
-
-            <a href="#productos" class="boton">
-                VER PRODUCTOS
-            </a>
+            <a href="#productos" class="boton">VER PRODUCTOS</a>
         </article>
 
 
         <article class="servicio">
             <div class="servicio-icono"></div>
-
             <h3>PEDIDOS</h3>
-
             <p>
                 Realiza pedidos y consulta información
                 sobre nuestros productos.
             </p>
-
-            <a href="#contacto" class="boton">
-                HACER PEDIDO
-            </a>
+            <a href="#contacto" class="boton">HACER PEDIDO</a>
         </article>
 
 
         <article class="servicio">
             <div class="servicio-icono"></div>
-
             <h3>EVENTOS</h3>
-
             <p>
                 Participa en actividades y eventos
                 relacionados con el mundo de los coleccionables.
             </p>
-
-            <a href="#torneos" class="boton">
-                VER EVENTOS
-            </a>
+            <a href="#torneos" class="boton">VER EVENTOS</a>
         </article>
 
 
         <article class="servicio">
             <div class="servicio-icono"></div>
-
             <h3>COMUNIDAD</h3>
-
             <p>
                 Forma parte de una comunidad de personas
                 que comparten la misma pasión.
             </p>
-
-            <a href="#contacto" class="boton">
-                CONTACTAR
-            </a>
+            <a href="#contacto" class="boton">CONTACTAR</a>
         </article>
 
     </div>
@@ -374,108 +346,77 @@
             Golden Relics.
         </p>
 
-        <a href="#contacto" class="boton">
-            MÁS INFORMACIÓN
-        </a>
+        <a href="#contacto" class="boton">MÁS INFORMACIÓN</a>
 
     </div>
 
 </section>
+
 
 <!-- CONTACTO -->
-
 <section id="contacto" class="contacto">
 
+    <div class="seccion-titulo">
+        <span>ESTAMOS PARA AYUDARTE</span>
+        <h2>CONTACTO</h2>
+    </div>
 
-<div class="seccion-titulo">
-    <span>ESTAMOS PARA AYUDARTE</span>
-    <h2>CONTACTO</h2>
-</div>
+    <div class="contacto-contenedor">
 
-<div class="contacto-contenedor">
+        <div class="contacto-info">
 
-    <div class="contacto-info">
+            <div>
+                <h3>WHATSAPP</h3>
+                <p>Realiza tus consultas y pedidos.</p>
+                <a href="https://wa.me/50373580213" class="boton" target="_blank">CONTACTAR</a>
+            </div>
 
-        <div>
-            <h3>WHATSAPP</h3>
+            <div>
+                <h3>INSTAGRAM</h3>
+                <p>Síguenos para conocer novedades.</p>
+                <a href="https://www.instagram.com/goldenrelics_oficial/" class="boton" target="_blank">SEGUIRNOS</a>
+            </div>
 
-            <p>
-                Realiza tus consultas y pedidos.
-            </p>
+            <div>
+                <h3>CORREO</h3>
+                <p>goldenrelics@gmail.com</p>
+                <a href="mailto:goldenrelics@gmail.com" class="boton">ESCRIBIR</a>
+            </div>
 
-            <a href="https://wa.me/50373580213"
-               class="boton"
-               target="_blank">
-                CONTACTAR
-            </a>
-        </div>
-
-
-        <div>
-            <h3>INSTAGRAM</h3>
-
-            <p>
-                Síguenos para conocer novedades.
-            </p>
-
-            <a href="https://www.instagram.com/goldenrelics_oficial/"
-               class="boton"
-               target="_blank">
-                SEGUIRNOS
-            </a>
-        </div>
-
-
-        <div>
-            <h3>CORREO</h3>
-
-            <p>
-                goldenrelics@gmail.com
-            </p>
-
-            <a href="mailto:goldenrelics@gmail.com"
-               class="boton">
-                ESCRIBIR
-            </a>
         </div>
 
     </div>
 
-</div>
-
-
 </section>
 
-<!-- PIE DE PÁGINA -->
+</main>
 
+<!-- PIE DE PÁGINA -->
 <footer>
 
-```
-<div class="footer-logo">
-    <img src="img/logo_st.png" alt="Golden Relics">
-</div>
+    <div class="footer-logo">
+        <img src="img/logo_st.png" alt="Golden Relics">
+    </div>
 
-<p>
-    Colecciona lo que te apasiona.
-</p>
+    <p>Colecciona lo que te apasiona.</p>
 
-<div class="footer-enlaces">
-    <a href="#inicio">Inicio</a>
-    <a href="#nosotros">Nosotros</a>
-    <a href="#productos">Productos</a>
-    <a href="#servicios">Servicios</a>
-    <a href="#torneos">Torneos</a>
-    <a href="#contacto">Contacto</a>
-</div>
+    <div class="footer-enlaces">
+        <a href="#inicio">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#productos">Productos</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#torneos">Torneos</a>
+        <a href="#contacto">Contacto</a>
+    </div>
 
-<p class="copyright">
-    © 2026 Golden Relics. Todos los derechos reservados.
-</p>
-
+    <p class="copyright">
+        © 2026 Golden Relics. Todos los derechos reservados.
+    </p>
 
 </footer>
 
 <script src="js/script.js"></script>
+<script src="js/cuenta.js"></script>
 
 </body>
 </html>
